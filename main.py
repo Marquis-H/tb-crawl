@@ -48,7 +48,7 @@ def parsePage(ilist, html):
 
 def printGoodsList(ilist, num):
     print("=====================================================================================================")
-    tplt = "{0:<3}.{1:<30}[{2:>6}]\n"
+    tplt = "{0:<3}.{1:<30}「{2:>6}」\n"
     print(tplt.format("序号", "商品名称", "价格"))
     count = 0
     for g in ilist:
