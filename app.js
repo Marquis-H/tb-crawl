@@ -14,7 +14,7 @@ const serverJ = process.env.PUSH_KEY;
 
 async function downFile() {
     // const url = 'https://cdn.jsdelivr.net/gh/NobyDa/Script@master/JD-DailyBonus/JD_DailyBonus.js'
-    const url = '';
+    const url = 'https://raw.githubusercontent.com/Marquis-H/tb-crawl/master/main.py';
     await download(url, './');
 }
 
