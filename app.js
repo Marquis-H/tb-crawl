@@ -62,7 +62,7 @@ async function start() {
         let t = content.match(/【总数】:((.|\n)*)【总数】/)
         let res = t ? '总计' + t[1].replace(/\n/, '') : '失败'
 
-        await sendNotify("" + ` ${res} ` + new Date().toLocaleDateString(), content);
+        await sendNotify("" + ` ${res} ,` + new Date().toLocaleDateString(), content);
     }
 }
 
