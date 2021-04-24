@@ -25,9 +25,9 @@ async function changeFile() {
     await fs.writeFileSync('./main.py', content, 'utf8')
 }
 
-async function sendNotify(text, desp, serverJ) {
+async function sendNotify(text, desp, key) {
     const options = {
-        uri: `https://sc.ftqq.com/${serverJ}.send`,
+        uri: `https://sc.ftqq.com/${key}.send`,
         form: { text, desp },
         json: true,
         method: 'POST'
