@@ -10,6 +10,7 @@ const download = require('download');
 // 公共变量
 const KEY = process.env.TAOBAO_COOKIE;
 const serverJ = process.env.PUSH_KEY;
+const serverJ2 = process.env.PUSH_KEY2;
 
 
 async function downFile() {
@@ -54,6 +55,18 @@ async function start() {
     console.log('执行完毕')
 
     if (serverJ) {
+        const path = "./result.txt";
+        let content = "";
+        if (fs.existsSync(path)) {
+            content = fs.readFileSync(path, "utf8");
+        }
+        let t = content.match(/【总数】:((.|\n)*)【总数】/)
+        let res = t ? '总计' + t[1].replace(/\n/, '') : '失败'
+
+        await sendNotify("" + ` ${res} `, content);
+    }
+
+    if (serverJ2) {
         const path = "./result.txt";
         let content = "";
         if (fs.existsSync(path)) {

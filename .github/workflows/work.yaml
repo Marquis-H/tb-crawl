@@ -34,3 +34,4 @@ jobs:
               env:
                 TAOBAO_COOKIE: ${{ secrets.TAOBAO_COOKIE }}
                 PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                PUSH_KEY2: ${{ secrets.PUSH_KEY2 }}
