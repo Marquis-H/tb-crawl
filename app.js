@@ -25,7 +25,7 @@ async function changeFile() {
     await fs.writeFileSync('./main.py', content, 'utf8')
 }
 
-async function sendNotify(text, desp) {
+async function sendNotify(text, desp, serverJ) {
     const options = {
         uri: `https://sc.ftqq.com/${serverJ}.send`,
         form: { text, desp },
@@ -63,7 +63,7 @@ async function start() {
         let t = content.match(/【总数】:((.|\n)*)【总数】/)
         let res = t ? '总计' + t[1].replace(/\n/, '') : '失败'
 
-        await sendNotify("" + ` ${res} `, content);
+        await sendNotify("" + ` ${res} `, content, serverJ);
     }
 
     if (serverJ2) {
@@ -75,7 +75,7 @@ async function start() {
         let t = content.match(/【总数】:((.|\n)*)【总数】/)
         let res = t ? '总计' + t[1].replace(/\n/, '') : '失败'
 
-        await sendNotify("" + ` ${res} `, content);
+        await sendNotify("" + ` ${res} `, content, serverJ2);
     }
 }
 
